@@ -51,3 +51,56 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 }
 
+
+/*func fetchData(urlString: String) {
+    
+    if let url = URL(string: urlString) {
+        let session = URLSession.shared
+       let task = session.dataTask(with: url) { data, response, error in
+            if  let error = error {
+                print(error)
+            }
+            if let safedata = data {
+                do {
+                    let decoder = try JSONDecoder().decode(WeatherDate.self, from: safedata)
+                    let id = decoder.weather[0].id
+                    let cityName = decoder.name
+                    let temperature = decoder.main.temp
+                    
+                   let weatherModel =  WeatherModel(conditionId: id, cityName: cityName, temperature: temperature)
+                   print( weatherModel.conditionName)
+                }
+                catch {
+                    print(error)
+                }
+                
+            }
+            }
+        task.resume() }
+}
+}
+ struct WeatherModel {
+     let conditionId: Int
+     let cityName:  String
+     let temperature: Double
+     var conditionName: String {
+         switch conditionId {
+         case 200...232:
+             return "cloud.bolt"
+         case 300...321:
+             return "cloud.drizzle"
+         case 500...531:
+             return "cloud.rain"
+         case 600...622:
+             return "clound.snow"
+         case 700...781:
+             return "cloud.fog"
+         case 800:
+             return "sun.max"
+         case 801...804:
+             return "cloud.bolt"
+         default:
+             return "cloud"
+
+*/
+
